@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistem Pakar Tanaman Lada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>🌿 Diagnosa Penyakit Tanaman Lada</h1>
+    <form method="POST">
+        <h3>Pilih Gejala yang Terjadi:</h3>
+        <div class="gejala-box">
+            {% for g in gejala %}
+                <label><input type="checkbox" name="gejala" value="{{ g }}"> {{ g.replace('_',' ').title() }}</label><br>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn">🔍 Diagnosa</button>
+    </form>
+</div>
+</body>
+</html>
